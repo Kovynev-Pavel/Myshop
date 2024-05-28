@@ -1,0 +1,144 @@
+body {
+    text-align: center;
+    margin: 0px;
+    background: darkorange;
+}
+main{
+    background: cornflowerblue;
+    height: 100px;
+    width: 100%;
+    border-bottom: 6px solid black;
+    font-size: 17px;
+    font-weight: bold;
+    display: inline-block;
+    padding-top: 35px;
+}
+aside{
+    height: 864px;
+    width: 15%;
+    float: left;
+    background: cornflowerblue;
+    border-right: 6px solid black;
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+}
+.alert-warning{
+    float: left;
+    clear: both;
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+}
+aside a{
+    margin-bottom: 30px;
+    display: block;
+    color: white;
+}
+h1{
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+a{
+    margin: 60px;
+    color: white;
+    transition: all 0.3s ease;
+}
+.btn btn-warning{
+    color: white;
+    transform: scale(0);
+}
+a:hover{
+    transform: scale(1.05);
+    font-size: 22px;
+    color: wheat;
+}
+.pon{
+    width: 510px;
+    height: 470px;
+}
+form{
+    text-align: center;
+    border: black 3px solid;
+    position: center;
+    background: cornflowerblue;
+    width: 580px;
+    height: 490px;
+    margin-left: 36%;
+    margin-top: 120px;
+}
+form label{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+form input {
+    width: 220px;
+    height: 40px;
+}
+form div{
+    text-align: center;
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+form h1{
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+form button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+textarea {
+    height: 150px;
+}
+.pon1{
+    width: 600px;
+    height: 480px;
+}
+.pon2{
+    float: left;
+    text-align: center;
+    display: inline;
+    margin-top: 30px;
+    padding: 25px;
+    border: solid black 2px;
+    margin-left: 100px;
+    width: 420px;
+    height: 640px;
+    background: wheat;
+}
+p{
+    font-size: 18px;
+    margin-top: 15px;
+}
+.pon3{
+    float: left;
+    text-align: left;
+    margin-left: 13px;
+}
+.pon4{
+    float: left;
+    text-align: center;
+    display: inline;
+    margin-top: 30px;
+    padding: 25px;
+    border: solid black 2px;
+    margin-left: 50px;
+    width: 420px;
+    height: 640px;
+    background: wheat;
+}
+.pon5{
+    width: 90px;
+    margin-right: 40px;
+}
+.pon3 div{
+    margin-bottom: 20px;
+}
+img{
+    margin-bottom: 20px;
+    width: 360px;
+    height: 340px;
+}
