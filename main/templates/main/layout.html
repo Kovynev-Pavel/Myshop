@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {# подключение папки статик со стилями #}
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,9 +6,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
-    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">{# подключение бутстрапа #}
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">{# подключение стилей #}
+    <title>{% block title %}{% endblock %}</title> {# блоки заголовка, который при функции extends будет разный на каждой странице #}
 </head>
 <body>
     <main>
@@ -26,7 +26,7 @@
         <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
         </svg>Корзина</a>
     </main>
-    {% block content %}
+    {% block content %}{# блок с контентом, который будет разный у других шаблонах при extends #}
     {% endblock %}
 </body>
 </html>

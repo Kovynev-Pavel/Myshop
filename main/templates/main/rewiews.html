@@ -12,19 +12,19 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <form class="pon1" action="{% url 'rewiew' %}" method="post">
+    <form class="pon1" action="{% url 'rewiew' %}" method="post"> {# rewiew - url адрес, при котором запускается функция rewiew #}
         {% csrf_token %}
         <div class="form-group">
             <label class="small nb-1" for="{{ form.first_name.id_for_label }}">Имя</label><br>
-            {{ form.first_name }}
+            {{ form.first_name }} {# поле для ввода имени #}
         </div>
         <div class="form-group">
             <label class="small nb-1" for="{{ form.email.id_for_label }}">Почта</label><br>
-            {{ form.email }}
+            {{ form.email }} {# поле для ввода эл. почты #}
         </div><br>
         <div class="form-group">
             <label class="small nb-1" for="{{ form.content.id_for_label }}">Отзыв</label><br>
-            {{ form.content }}
+            {{ form.content }} {# поле для ввода отзыва #}
         </div><br>
         <button class="btn btn-warning" type="submit">Оставить Отзыв</button>
    </form>

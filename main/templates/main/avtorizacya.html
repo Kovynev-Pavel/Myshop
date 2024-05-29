@@ -11,19 +11,19 @@
     <title>Авторизация</title>
 </head>
 <body>
-    <form class="pon" action="{% url 'login1' %}" method="post">
+    <form class="pon" action="{% url 'login1' %}" method="post"> {# login1 - url адрес, при котором запускается функция login #}
         {% csrf_token %}
         <h1>Авторизация</h1>
         <div class="form-group">
             <label class="small nb-1" for="{{ form.username.id_for_label }}">Имя пользователя</label><br>
-            {{ form.username }}
+            {{ form.username }} {# поле для ввода имени пользователя #}
         </div><br>
         <div class="form-group">
              <label class="small nb-1" for="{{ form.password.id_for_label }}">Пароль</label><br>
-             {{ form.password }}
+             {{ form.password }} {# поле для ввода пароля #}
         </div><br>
         <button class="btn btn-warning" type="submit">Авторизоваться</button><br>
-        <a href="{% url 'registrate' %}">Ещё не зарегестрировались?</a>
+        <a href="{% url 'registrate' %}">Ещё не зарегестрировались?</a> {# registrate - url адрес, при котором запускается функция registrate #}
     </form>
 </body>
 </html>

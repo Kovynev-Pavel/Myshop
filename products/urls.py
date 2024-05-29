@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [
+urlpatterns = [  # url адрес страниц приложения products, функций. Переход на страницы, вызов функций
     path('katalog', views.katalog, name='katalog'),
     path('basket', views.basket, name='basket'),
     path('baskets/add/<int:product_id>/', views.basket_add, name='basket_add'),

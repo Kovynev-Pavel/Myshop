@@ -1,16 +1,16 @@
-{% extends 'main/layout.html' %}
+{% extends 'main/layout.html' %} {# переносим код из шаблона layout.html сюда #}
 
 {% block title %} Добавить отзыв {% endblock %}
 
 {% block content %}
     {% if rewiews %}
         <h1>Отзывы</h1>
-        <a class="btn btn-success" href="{% url 'rewiew' %}"> Добавить Отзыв</a><br>
+        <a class="btn btn-success" href="{% url 'rewiew' %}"> Добавить Отзыв</a><br> {# rewiew - url адрес, при котором запускается функция rewiew #}
         <div class="pon3">
-            {% for i in rewiews %}
+            {% for i in rewiews %} {# вывод всех отзывов на страницу с помошью цикла если они есть #}
                 <div>
-                    <h5>{{ i.first_name }}</h5>
-                    <p>{{ i.content }}</p>
+                    <h5>{{ i.first_name }}</h5> {# имя пользователя #}
+                    <p>{{ i.content }}</p> {# текст отзыва #}
                 </div><br>
             {% endfor %}
         </div>

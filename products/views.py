@@ -2,40 +2,36 @@ from django.shortcuts import render, HttpResponseRedirect
 from .models import Product, ProductCategory, Basket
 from main.models import Users
 
-def katalog(request):
-    categories = ProductCategory.objects.all()
-    return render(request, 'products/katalog.html', context={
+def katalog(request):  # Вывод шаблона страницы с каталогом
+    categories = ProductCategory.objects.all()  # Запись категорий в переменную
+    return render(request, 'products/katalog.html', context={ #Показ страницы с каталогом, передача словаря с переменной
         'categories': categories,
         }
                 )
 
-def products(request, pk):
-    categories = ProductCategory.objects.all()
-    category = ProductCategory.objects.get(pk=pk)
-    products = category.products.all()
-    return render(request, 'products/tovars.html', context={
+def products(request, pk):  # Вывод шаблона страницы с продуктами
+    category = ProductCategory.objects.get(pk=pk)  # категория с нужным индексом
+    products = category.products.all() # Запись продуктов нужной категории в переменную
+    return render(request, 'products/tovars.html', context={#Показ страницы с продуктами, передача словаря с переменными
         'products': products,
-        'categories': categories,
         'category': category
         }
     )
 
-def basket(request):
-    baskets = Basket.objects.filter(user=request.user)
+def basket(request):  # Вывод шаблона страницы с корзиной
+    baskets = Basket.objects.filter(user=request.user)  # Запись в переменную объектов корзины пользователя
     total_quantity = 0
     for basket in baskets:
-        total_quantity = total_quantity + basket.quantity
+        total_quantity = total_quantity + basket.quantity  # кол-во всех продуктов
     context = {
         'baskets': Basket.objects.filter(user=request.user),
         'total_quantity': total_quantity,
     }
-    return render(request, 'products/basket.html', context)
+    return render(request, 'products/basket.html', context)  # Показ страницы с продуктами, передача словаря
 
-
-
-def basket_add(request, product_id):
-    product = Product.objects.get(id=product_id)
-    baskets = Basket.objects.filter(user=request.user, product=product)
+def basket_add(request, product_id):  # Добавление продукта в корзину
+    product = Product.objects.get(id=product_id)  # продукт с нужным индексом
+    baskets = Basket.objects.filter(user=request.user, product=product)  # Запись в переменную фильтрованных объктов
 
     if not baskets.exists():
         Basket.objects.create(user=request.user, product=product, quantity=1)
@@ -44,9 +40,9 @@ def basket_add(request, product_id):
         basket.quantity += 1
         basket.save()
 
-    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])  # Переход на эту же страницу
 
-def basket_remove(request, basket_id):
-    basket = Basket.objects.get(id=basket_id)
-    basket.delete()
-    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+def basket_remove(request, basket_id):  # Удаление продукта из корзины
+    basket = Basket.objects.get(id=basket_id)  # Запись в переменную объекта для удаления
+    basket.delete()  # Удаление продукта
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])  # Переход на эту же страницу
