@@ -10,11 +10,13 @@ def katalog(request):  # Вывод шаблона страницы с ката�
                 )
 
 def products(request, pk):  # Вывод шаблона страницы с продуктами
+    categories = ProductCategory.objects.all()  # Запись категорий в переменную
     category = ProductCategory.objects.get(pk=pk)  # категория с нужным индексом
     products = category.products.all() # Запись продуктов нужной категории в переменную
     return render(request, 'products/tovars.html', context={#Показ страницы с продуктами, передача словаря с переменными
         'products': products,
-        'category': category
+        'category': category,
+        'categories': categories
         }
     )
 
